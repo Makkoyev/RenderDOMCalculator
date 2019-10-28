@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=Staatliches&display=swap");
 html * {
   padding: 0;
   margin: 0;
+  font-family: 'Staatliches', cursive;
 }
 
 .calc-design {
@@ -8,7 +10,7 @@ html * {
   width: 798px;
   height: 598px;
   border: 1px solid rgba(20, 20, 20, 0.8);
-  border-radius: 30px;
+  border-radius: 15px;
   padding: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -22,7 +24,7 @@ html * {
 .calc-design .upper-calc {
   -ms-flex-preferred-size: 45%;
       flex-basis: 45%;
-  border-radius: 30px 30px 0 0;
+  border-radius: 15px 15px 0 0;
   border: 1px solid rgba(20, 20, 20, 0.8);
   margin-bottom: -0.5px;
   padding: 2rem;
@@ -48,24 +50,77 @@ html * {
   margin-top: -0.5px;
   -ms-flex-preferred-size: 55%;
       flex-basis: 55%;
-  border-radius: 0  0 30px 30px;
+  border-radius: 0  0 15px 15px;
   border: 1px solid rgba(20, 20, 20, 0.8);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .calc-design .down-calc .keyboard-left {
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
-  border: 1px solid rgba(20, 20, 20, 0.8);
-  margin-right: -0.5px;
+  margin-right: -1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.calc-design .down-calc .keyboard-left > div {
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+  text-align: center;
+  padding: 2.1rem .95rem;
+  background: black;
+  color: white;
+  font-size: 1.2rem;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.calc-design .down-calc .keyboard-left > div:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .calc-design .down-calc .keyboard-right {
+  margin-left: -1px;
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
-  border: 1px solid rgba(20, 20, 20, 0.8);
-  margin-left: -0.5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.calc-design .down-calc .keyboard-right > div {
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+  text-align: center;
+  background: black;
+  color: white;
+  padding: 1.6rem 2.84rem;
+  font-size: 2rem;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+}
+
+.calc-design .down-calc .keyboard-right > div:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.2);
 }
 /*# sourceMappingURL=main.css.map */
