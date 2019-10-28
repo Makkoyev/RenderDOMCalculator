@@ -45,6 +45,10 @@ html * {
       align-self: flex-end;
 }
 
+.calc-design .upper-calc #result-final {
+  font-size: 2rem;
+}
+
 .calc-design .down-calc {
   padding: 2rem;
   margin-top: -0.5px;

@@ -26,6 +26,9 @@ html * {
     div[class^="result-"]{
       align-self: flex-end;
     }
+    #result-final{
+      font-size: 2rem;
+    }
   }
   .down-calc {
     padding: 2rem;  

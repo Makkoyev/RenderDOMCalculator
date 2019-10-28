@@ -1,5 +1,6 @@
 const RenderDOM = () => {
-  const results = [1, 2, 3, 4, 5];
+  var y = [];
+  // var x = y.join('');
   const keyMap = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   const keyMapCMD = ['Canc', 'Del'];
   const operators = ['*', '/', '+', '-', '%'];
@@ -9,12 +10,14 @@ const RenderDOM = () => {
   // Element Creation
   let divEl = document.createElement('div');
   let DivElUpper = document.createElement('div');
+  let DivElUpperResult = document.createElement('div');
   let DivElDown = document.createElement('div');
   let DivElDownLeft = document.createElement('div');
   let DivElDownRight = document.createElement('div');
   // Element Class Assignment
   divEl.className += 'calc-design';
   DivElUpper.classList += 'upper-calc';
+  DivElUpperResult.id += 'result-final';
   DivElDown.classList += 'down-calc';
   DivElDownLeft.classList += 'keyboard-left';
   DivElDownRight.classList += 'keyboard-right';
@@ -23,18 +26,17 @@ const RenderDOM = () => {
  appEl.appendChild(divEl);
  divEl.appendChild(DivElUpper);
  divEl.appendChild(DivElDown);
+ DivElUpper.appendChild(DivElUpperResult);
  DivElDown.appendChild(DivElDownLeft);
  DivElDown.appendChild(DivElDownRight);
 
-  
+ const finalResult = document.getElementById('result-final');
+ console.log(finalResult);
 
-results.forEach((item, index) => {
-  DivElUpper.innerHTML += `<div class="result-${index+1}"> ${item} </div>`
-});
 keyMap.reverse().forEach((item, index) => {
   DivElDownLeft.innerHTML += `<div class="number-${index+1}"> ${item} </div>`
 })
-keyMapCMD.forEach((item, index) => {
+keyMapCMD.forEach((item) => {
   DivElDownLeft.innerHTML += `<div class="command${item}"> ${item} </div>`
 })
 operators.forEach((item, index) => {
@@ -43,6 +45,15 @@ operators.forEach((item, index) => {
 symbols.forEach((item, index) => {
   DivElDownRight.innerHTML += `<div class="symbol-${index}"> ${item} </div>`
 })
+
+DivElDownLeft.addEventListener('click', (e) => {
+  y.push(e.target.childNodes[0].nodeValue);
+  var x = y.join('');
+  console.log(x);
+  // finalResult.innerHTML += e.target.childNodes[0].nodeValue;
+  finalResult.innerHTML = x;
+})
+
 
 };
 // Rendering DOM
